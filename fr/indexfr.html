@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ka">
+  <head>
+    <title>Versio</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="language-menu">
+        <div class="language-selected" data-lang="fr">
+          <img src="https://flagcdn.com/w20/fr.png" alt="FR" /> FR
+        </div>
+        <div class="language-options">
+          <a href="../eng/indexeng.html" data-lang="en"
+            ><img src="https://flagcdn.com/w20/gb.png" alt="EN" /> EN</a
+          >
+          <a href="../index.html" data-lang="ka"
+            ><img src="https://flagcdn.com/w20/ge.png" alt="KA" /> KA</a
+          >
+        </div>
+      </div>
+
+      <div class="first_page">
+        <!-- აქ იწყება მენიუ და ფოტო      -->
+
+        <div class="logo">
+          <div class="logo_image_group">
+            <img src="images/Logo_last.png" alt="" />
+
+            <h1 class="Name">Versio</h1>
+          </div>
+          <h3 class="definition">Agence de traduction</h3>
+        </div>
+        <div class="nav">
+          <ul class="nav__list">
+            <!-- <li><a id="" href="#middle">მთავარი</a></li> -->
+            <li><a id="about-us" href="#about">À propos de nous</a></li>
+            <li><a id="service" href="#partners">Service</a></li>
+            <li><a id="contacts" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <section id="about" class="main">
+      <h1 id="us">À propos de nous</h1>
+      <div class="hero">
+        <h1>Qualité du service</h1>
+        <p>
+          L'entreprise Versio rassemble des traducteurs professionnels et
+          expérimentés. Nous veillons à ce que nos clients bénéficient de
+          services rapides, de qualité et complets.
+        </p>
+        <p>
+          Contactez-nous ! Écrivez-nous ou appelez-nous. Nous espérons que notre
+          collaboration contribuera grandement à votre réussite !
+        </p>
+      </div>
+      <div class="history">
+        <h1 id="years"></h1>
+        <p>
+          Offrir un service de qualité à nos clients est le fruit de nombreuses
+          années de connaissances, d'expérience et de travail acharné. Notre
+          entreprise collabore depuis de nombreuses années avec des institutions
+          publiques et des entreprises privées.
+        </p>
+      </div>
+      <div class="section__image"></div>
+    </section>
+
+    <div id="partners" class="partners">
+      <div class="service__image">
+        <h1>Service</h1>
+        <img src="icon/Geo.png" alt="" />
+        <img src="icon/United Kingdom 2.png" alt="" />
+        <img src="icon/France 2.png" alt="" />
+        <img src="icon/Russian Federation 2.png" alt="" />
+      </div>
+      <div class="article">
+        <h3>Traduction écrite</h3>
+
+        <p>
+          Traduction de tous types de documents et de textes imprimés, audio et
+          vidéo vers le géorgien et d'autres langues. <br />Traduction de tous
+          types de textes numériques, audio et vidéo vers le géorgien et
+          d'autres langues.
+        </p>
+
+        <h3>Édition de texte</h3>
+
+        <p>
+          Conversion de tous types de textes manuscrits, audio et vidéo, en
+          géorgien et en langues étrangères, au format papier. <br />
+          Correction de tous types de textes imprimés en géorgien.
+        </p>
+      </div>
+      <div class="partner__image">
+        <img
+          class="part"
+          src="images/simone-hutsch-_wpce-AsLxk-unsplash - Copy.jpg"
+          alt=""
+          loading="lazy"
+        />
+        <img
+          class="part"
+          src="images/simone-hutsch-_wpce-AsLxk-unsplash.jpg"
+          alt=""
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <div id="contact" class="footer">
+      <li>
+        <a href="mailto:versio.ge@gmail.com"
+          ><img class="email" src="icon/iconfinder___Letter_1904660.png" alt=""
+        /></a>
+      </li>
+      <li>
+        <a href="" target="_blank"
+          ><img class="email" src="icon/iconfinder_location_115718.png" alt=""
+        /></a>
+      </li>
+      <!-- <li>
+        <a
+          href="https://www.facebook.com/profile.php?id=100027104966988"
+          target="_blank"
+          ><img class="email" src="icon/iconfinder_social_55_492997.png" alt=""
+        /></a>
+      </li> -->
+      <div class="phone">
+        <a href="tel:+995 577545060"
+          ><img
+            class="phone-img"
+            src="icon/iconfinder_ic_contact_phone_48px_3669371.png"
+            alt=""
+        /></a>
+        <p>+995577545060</p>
+      </div>
+    </div>
+    <script>
+      const years = document.getElementById('years');
+      const year = new Date().getFullYear() - 2016;
+      years.innerHTML = `${year} ans de travail de traduction`;
+
+      const selected = document.querySelector('.language-selected');
+      const options = document.querySelector('.language-options');
+
+      // toggle dropdown
+      selected.addEventListener('click', () => {
+        options.classList.toggle('active');
+      });
+
+      // close dropdown when a language link is clicked (links handle navigation)
+      options.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          options.classList.remove('active');
+        });
+      });
+
+      // close when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.language-menu')) {
+          options.classList.remove('active');
+        }
+      });
+    </script>
+    <!-- <script src="script.js"></script> -->
+  </body>
+  <!-- <div id="selected-language"></div> -->
+</html>
